@@ -1,7 +1,4 @@
-import Model.ControllerJeu;
-import Model.Joeur;
-import Model.ModelJeu;
-import Model.Monstre;
+import Model.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -17,15 +14,9 @@ public class Main {
         model.setJoeurActuel(joeur1);
         model.setJoeurCible(joeur2);
         ControllerJeu controller = new ControllerJeu(model);
-        while(controller.isJeuEnCours()){
-            System.out.println(controller.affichageDebutTourJoueur());
-            controller.deroulementTour();
-            controller.updateStatusJeu();
-
-
-        }
-        System.out.println("le vainqueure est : " + controller.getVainqueur().toString());
-
+        ViewJeu view = new ViewJeu(controller);
+        view.run();
 
     }
+
 }
