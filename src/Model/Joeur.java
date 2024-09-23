@@ -1,9 +1,11 @@
 package Model;
 
+import java.util.Random;
+
 public class Joeur {
     private String nom;
     private Monstre monstre;
-
+    private Bestiaire bestie;
     public String getNom() {
         return nom;
     }
@@ -37,6 +39,46 @@ public class Joeur {
         return false;
     }
 
+
+
+    public Monstre choisirMonstreVie(int vie){
+        for (int i = 0; i < bestie.getEnclos().size(); i++) {
+            if(bestie.getEnclos().get(i).getVie()==vie){
+                return bestie.getEnclos().get(i);
+            }
+        }
+        Random random = new Random();
+        int randomIndex = random.nextInt(bestie.getEnclos().size());
+        Monstre randomMonstre = bestie.getEnclos().get(randomIndex);
+        return randomMonstre;
+    }
+
+    public Monstre choisirMonstreDefense(int defense){
+        for (int i = 0; i < bestie.getEnclos().size(); i++) {
+            if(bestie.getEnclos().get(i).getDefense()==defense){
+                return bestie.getEnclos().get(i);
+            }
+        }
+        Random random = new Random();
+        int randomIndex = random.nextInt(bestie.getEnclos().size());
+        Monstre randomMonstre = bestie.getEnclos().get(randomIndex);
+        return randomMonstre;
+    }
+
+    public Monstre choisirMonstreForce(int force){
+        for (int i = 0; i < bestie.getEnclos().size(); i++) {
+            if(bestie.getEnclos().get(i).getForce()==force){
+                return bestie.getEnclos().get(i);
+            }
+        }
+        Random random = new Random();
+        int randomIndex = random.nextInt(bestie.getEnclos().size());
+        Monstre randomMonstre = bestie.getEnclos().get(randomIndex);
+        return randomMonstre;
+    }
+
+
+
     @Override
     public String toString() {
         return "Joeur{" +
@@ -44,6 +86,7 @@ public class Joeur {
                 ", monstre=" + monstre +
                 '}';
     }
+
 
 
 }

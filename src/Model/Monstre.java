@@ -1,10 +1,10 @@
 package Model;
 
-public class Monstre {
-    private int vie;
-    private int force;
-    private int defense;
-    private String nom;
+public abstract class Monstre {
+    protected int vie;
+    protected int force;
+    protected int defense;
+    protected String nom;
 
     public int getVie() {
         return vie;
@@ -46,6 +46,7 @@ public class Monstre {
     }
     public void submitFrappe(int force) {
         this.vie -= force;
+        this.reagirFrappe();
     }
 
     @Override
@@ -57,4 +58,9 @@ public class Monstre {
                 ", nom='" + nom + '\'' +
                 '}';
     }
+     public abstract void reagirFrappe();
+
+
 }
+
+

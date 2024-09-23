@@ -6,8 +6,8 @@ public class Main {
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
-        Joeur joeur1 = new Joeur("maryem", new Monstre(15, 12, 10, "Tiger"));
-        Joeur joeur2 = new Joeur("malak", new Monstre(15, 10, 15, "Lion"));
+        Joeur joeur1 = new Joeur("maryem", new Monstre1(15, 12, 10, "Tiger"));
+        Joeur joeur2 = new Joeur("malak", new Monstre2(15, 10, 15, "Lion"));
 
 
         ModelJeu model = new ModelJeu(joeur1, joeur2);
